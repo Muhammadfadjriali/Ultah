@@ -1,0 +1,109 @@
+/* Warna Latar */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: radial-gradient(circle, #09da40, #2afe00, #69bb11);
+    overflow: hidden;
+}
+
+/* Kontainer Balon */
+.balloon-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Balon */
+.balloon {
+    position: absolute;
+    bottom: -150px;
+    width: 70px;
+    height: 90px;
+    background: radial-gradient(circle at 30% 30%, #ff6f61, #e84342);
+    border-radius: 50%;
+    animation: floatBalloon 10s linear infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.balloon:nth-child(odd) {
+    background: radial-gradient(circle at 30% 30%, #dc6fb2, #b73bab);
+}
+
+.balloon:nth-child(even) {
+    background: radial-gradient(circle at 30% 30%, #c47d7d, #a84f4f);
+}
+
+.balloon:nth-child(1) { left: 10%; animation-duration: 9s; }
+.balloon:nth-child(2) { left: 30%; animation-duration: 8s; }
+.balloon:nth-child(3) { left: 50%; animation-duration: 11s; }
+.balloon:nth-child(4) { left: 70%; animation-duration: 10s; }
+.balloon:nth-child(5) { left: 20%; animation-duration: 7s; }
+.balloon:nth-child(6) { left: 80%; animation-duration: 12s; }
+
+/* Animasi Balon */
+@keyframes floatBalloon {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+    50% { transform: translateY(-50vh) rotate(20deg); opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(0deg); opacity: 0.8; }
+}
+
+/* Kartu Ucapan */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+}
+
+.photo {
+    width: 50%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 28px;
+    color: #2a2a72;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    color: #4a4a9d;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #1eff44;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background-color: #46b481;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
